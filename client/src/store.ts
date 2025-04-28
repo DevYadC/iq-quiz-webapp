@@ -4,9 +4,9 @@ import type { ProblemSet } from './types'
 interface QuizState {
     activeSet: ProblemSet | null
     userAnswers: number[]
-    currQuestion: number
+    currQnIdx: number
     selectSet: (probSet: ProblemSet) => void
-    setAnswer: (answer: number) => void
+    setUserAnswers: (answer: number) => void
     nextQuestion: () => void
     prevQuestion: () => void
 }
@@ -15,34 +15,34 @@ export const useQuizStore = create<QuizState>((set, get) => ({
     // state
     activeSet: null,
     userAnswers: [],
-    currQuestion: 0,
+    currQnIdx: 0,
 
     // actions
     selectSet: (probSet) =>
         set({
             activeSet: probSet,
-            currQuestion: 0,
+            currQnIdx: 0,
             userAnswers: Array(probSet.questions.length).fill(-1),
         }),
 
-    setAnswer: (answer) => {
-        const { currQuestion, userAnswers } = get()
+    setUserAnswers: (answer) => {
+        const { currQnIdx, userAnswers } = get()
         const updated = [...userAnswers]
-        updated[currQuestion] = answer
+        updated[currQnIdx] = answer
         set({ userAnswers: updated })
     },
 
     nextQuestion: () => {
-        const { currQuestion, activeSet } = get()
-        if (activeSet && currQuestion < activeSet.questions.length - 1) {
-            set({ currQuestion: currQuestion + 1 })
+        const { currQnIdx, activeSet } = get()
+        if (activeSet && currQnIdx < activeSet.questions.length - 1) {
+            set({ currQnIdx: currQnIdx + 1 })
         }
     },
 
     prevQuestion: () => {
-        const { currQuestion } = get()
-        if (currQuestion > 0) {
-            set({ currQuestion: currQuestion - 1 })
+        const { currQnIdx } = get()
+        if (currQnIdx > 0) {
+            set({ currQnIdx: currQnIdx - 1 })
         }
     },
 }))
