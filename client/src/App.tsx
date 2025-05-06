@@ -2,7 +2,7 @@
 import './styles/App.css'
 import SelectQuiz from './components/SelectQuiz'
 import Question from './components/Question'
-
+import ScoreTable from './components/ScoreTable'
 function App() {
 
 
@@ -12,7 +12,7 @@ function App() {
 
       <SelectQuiz />
       <Question />
-
+      <ScoreTable />
     </>
   )
 }

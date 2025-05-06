@@ -6,7 +6,7 @@ import { useQuizStore } from '../store'
 
 export default function SelectQuiz() {
     const selectSet = useQuizStore((s) => s.selectSet)
-    const { data: sets = [], isLoading, error } = useProblemSets()
+    const { data: problemSets = [], isLoading, error } = useProblemSets()
 
     if (isLoading) {
         return <div>Loading quizzes…</div>
@@ -17,7 +17,7 @@ export default function SelectQuiz() {
 
     return (
         <ButtonGroup variant="contained" aria-label="Quiz selector">
-            {sets.map((set) => (
+            {problemSets.map((set) => (
                 <Button key={set.setName} onClick={() => selectSet(set)}>
                     {set.setName}
                 </Button>
