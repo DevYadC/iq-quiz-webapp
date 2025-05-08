@@ -3,6 +3,8 @@ import './styles/App.css'
 import SelectQuiz from './components/SelectQuiz'
 import Question from './components/Question'
 import ScoreTable from './components/ScoreTable'
+import ScoreChart from './components/ScoreChart'
+
 function App() {
 
 
@@ -13,6 +15,7 @@ function App() {
       <SelectQuiz />
       <Question />
       <ScoreTable />
+      <ScoreChart />
     </>
   )
 }

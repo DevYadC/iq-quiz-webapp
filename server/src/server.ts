@@ -5,7 +5,7 @@ import problemSetRoutes from './routes/problemSetRoutes'
 import scoreRoutes from './routes/scoreRoutes';
 import { errorHandler } from './middleware/errorHandler'
 import cors from 'cors'
-
+import { postScore } from './controllers/postScores';
 dotenv.config()
 const app = express()
 app.use(cors())
@@ -18,8 +18,9 @@ connectDB(process.env.MONGODB_URI!)
 
 app.use('/api', problemSetRoutes)
 
-// mount routes
 app.use('/api', scoreRoutes);
+
+app.use('/api', postScore);
 
 
 // error handling

@@ -1,6 +1,5 @@
-
 import { Request, Response, NextFunction } from 'express';
-import ProblemSet, { IProblemSet } from '../models/ProblemSet';
+import { ProblemSet, IProblemSet } from '../models/ProblemSet';
 
 export async function getAllProblemSets(
     _req: Request,

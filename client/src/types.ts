@@ -24,7 +24,10 @@ export const UserScoreSchema = z.object({
     __v: z.number(),
 })
 
+export const BarChartScoreSchema = z.record(z.array(z.number()));
+
 export type Question = z.infer<typeof QuestionSchema>
 export type ProblemSet = z.infer<typeof ProblemSetSchema>
 export type Score = z.infer<typeof ScoreSchema>
 export type UserScore = z.infer<typeof UserScoreSchema>
+export type BarChartScoreSchema = z.infer<typeof BarChartScoreSchema>

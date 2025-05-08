@@ -27,4 +27,4 @@ const ProblemSetSchema = new Schema<IProblemSet>(
     }
 )
 
-export default model<IProblemSet>('ProblemSet', ProblemSetSchema)
+export const ProblemSet = model<IProblemSet>('ProblemSet', ProblemSetSchema)

@@ -46,3 +46,13 @@ export const useQuizStore = create<QuizState>((set, get) => ({
         }
     },
 }))
+
+export interface ChartState {
+    selectedScore: string;
+    setSelectedScore: (score: string) => void;
+}
+
+export const useChartStore = create<ChartState>((set) => ({
+    selectedScore: '',
+    setSelectedScore: (score) => set({ selectedScore: score }),
+}));
