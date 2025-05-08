@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getAllProblemSets } from '../controllers/problemSetController';
+import { getAllProblemSets } from '../controllers/getProblemSets';
 
 const router = Router();
 
-// GET /api/problem-sets
+
 router.get('/problem-sets', getAllProblemSets);
 
 export default router;
