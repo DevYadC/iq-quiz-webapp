@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getBarChartScores } from '../controllers/getBarChartScores';
-import { getAllScores } from '../controllers/getAllScores';
+import { getAllScores } from '../controllers/getAllScoresController';
 import { postScore } from '../controllers/postScores';
 
 const router = Router();
